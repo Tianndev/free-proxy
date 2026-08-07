@@ -36,6 +36,25 @@ const main = async () => {
     stats.all = allArray.length;
 
     await fs.writeFile(path.join(__dirname, 'stats.json'), JSON.stringify(stats));
+
+    const wibTime = new Date().toLocaleString('en-GB', {
+        timeZone: 'Asia/Jakarta',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    });
+
+    const readmePath = path.join(__dirname, 'README.md');
+    const readme = await fs.readFile(readmePath, 'utf8');
+    const updated = readme.replace(
+        /<!-- LAST_UPDATED -->.*?<!-- \/LAST_UPDATED -->/,
+        `<!-- LAST_UPDATED -->${wibTime}<!-- /LAST_UPDATED -->`
+    );
+    await fs.writeFile(readmePath, updated);
 };
 
 main();
