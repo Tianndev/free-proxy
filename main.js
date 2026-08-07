@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const main = async () => {
     const proxyDir = path.join(__dirname, 'proxy');
-    
+
     try {
         await fs.access(proxyDir);
     } catch {
@@ -22,12 +22,12 @@ const main = async () => {
     await Promise.all(Object.entries(URLS).map(async ([proto, urls]) => {
         const rawData = await fetchAllProxies(urls);
         const proxies = extractProxies(rawData);
-        
+
         if (proto !== 'all') {
             await fs.writeFile(path.join(proxyDir, `${proto}.txt`), proxies.join('\n'));
             stats[proto] = proxies.length;
         }
-        
+
         proxies.forEach(p => allProxies.add(p));
     }));
 
@@ -35,8 +35,7 @@ const main = async () => {
     await fs.writeFile(path.join(proxyDir, 'all.txt'), allArray.join('\n'));
     stats.all = allArray.length;
 
-    const commitMsg = `Update: HTTP(${stats.http || 0}) HTTPS(${stats.https || 0}) SOCKS4(${stats.socks4 || 0}) SOCKS5(${stats.socks5 || 0}) ALL(${stats.all || 0})`;
-    await fs.writeFile(path.join(__dirname, 'commit_msg.txt'), commitMsg);
+    await fs.writeFile(path.join(__dirname, 'stats.json'), JSON.stringify(stats));
 };
 
 main();

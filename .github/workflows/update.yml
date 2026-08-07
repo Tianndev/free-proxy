@@ -14,13 +14,41 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Inject providers
+        env:
+          PROVIDER_URLS: ${{ secrets.PROVIDER_URLS }}
+        run: |
+          mkdir -p src
+          printf 'export const URLS = %s;' "$PROVIDER_URLS" > src/providers.js
       - name: Run script
         run: npm start
       - name: Commit changes
+        env:
+          GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
-          git config --local user.email "tianndev-proxy-bot@users.noreply.github.com"
-          git config --local user.name "tianndev-proxy-bot"
-          git add proxy/
-          MSG=$(cat commit_msg.txt)
-          git commit -m "$MSG" || exit 0
+          git config --local user.email "$GIT_EMAIL"
+          git config --local user.name "Tianndev"
+
+          STATS=$(cat stats.json)
+          HTTP=$(echo $STATS | node -e "process.stdout.write(String(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).http||0))")
+          HTTPS=$(echo $STATS | node -e "process.stdout.write(String(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).https||0))")
+          SOCKS4=$(echo $STATS | node -e "process.stdout.write(String(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).socks4||0))")
+          SOCKS5=$(echo $STATS | node -e "process.stdout.write(String(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).socks5||0))")
+          ALL=$(echo $STATS | node -e "process.stdout.write(String(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).all||0))")
+
+          git add proxy/http.txt
+          git commit -m "Update http.txt: ${HTTP} proxies" || true
+
+          git add proxy/https.txt
+          git commit -m "Update https.txt: ${HTTPS} proxies" || true
+
+          git add proxy/socks4.txt
+          git commit -m "Update socks4.txt: ${SOCKS4} proxies" || true
+
+          git add proxy/socks5.txt
+          git commit -m "Update socks5.txt: ${SOCKS5} proxies" || true
+
+          git add proxy/all.txt
+          git commit -m "Update all.txt: ${ALL} proxies" || true
+
           git push
