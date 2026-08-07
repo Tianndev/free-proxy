@@ -1,39 +1,41 @@
-# tianndev/free-proxy
+# free-proxy
 
-![License](https://img.shields.io/github/license/tianndev/free-proxy?style=flat-square)
-![Updated](https://img.shields.io/badge/Updated-Every_10_Minutes-brightgreen?style=flat-square)
-![Node](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-blue?style=flat-square)
+![License](https://img.shields.io/github/license/tianndev/free-proxy?style=flat-square&color=black)
+![Last Commit](https://img.shields.io/github/last-commit/tianndev/free-proxy?style=flat-square&color=black)
+![Updated](https://img.shields.io/badge/auto--updated-every_10_min-black?style=flat-square)
 
-A continuously updated free proxy list maintained by [tianndev](https://github.com/tianndev). This repository aggregates, categorizes, and deduplicates proxies from multiple providers across the globe, automatically refreshed every **10 minutes** via GitHub Actions.
+A continuously updated, protocol-categorized free proxy list maintained by [tianndev](https://github.com/tianndev). Proxies are aggregated from multiple upstream providers, deduplicated, and committed automatically every **10 minutes** via GitHub Actions.
 
 ---
 
 ## Proxy Lists
 
-All lists are formatted as `IP:PORT`, one entry per line. Suitable for direct integration with curl, proxychains, Python requests, and any proxy-aware tooling.
+All entries follow `IP:PORT` format, one proxy per line. Suitable for direct use with `curl`, `proxychains`, Python `requests`, and similar tooling.
 
-| Protocol | Raw URL |
-|:---|:---|
-| HTTP | [`proxy/http.txt`](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/http.txt) |
-| HTTPS | [`proxy/https.txt`](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/https.txt) |
-| SOCKS4 | [`proxy/socks4.txt`](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks4.txt) |
-| SOCKS5 | [`proxy/socks5.txt`](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks5.txt) |
-| All (Mixed) | [`proxy/all.txt`](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/all.txt) |
+| Protocol | File | Raw URL |
+|:---|:---|:---|
+| HTTP | `proxy/http.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/http.txt) |
+| HTTPS | `proxy/https.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/https.txt) |
+| SOCKS4 | `proxy/socks4.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks4.txt) |
+| SOCKS5 | `proxy/socks5.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks5.txt) |
+| All (Mixed) | `proxy/all.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/all.txt) |
 
 ---
 
-## How It Works
+## Update Cycle
 
-1. GitHub Actions triggers `npm start` on a 10-minute cron schedule.
-2. `main.js` dispatches concurrent fetch requests to multiple upstream proxy providers.
-3. Each response is parsed, deduplicated, and written to the corresponding protocol file.
-4. A commit is pushed automatically with the total count per protocol.
+| Property | Value |
+|:---|:---|
+| Trigger | GitHub Actions cron schedule |
+| Interval | Every 10 minutes |
+| Deduplication | Per-protocol, before commit |
+| Commit format | `Update http.txt: N proxies` |
 
 ---
 
 ## Local Usage
 
-No external dependencies required. Requires Node.js 18 or higher.
+Requires Node.js 24 or higher. No external dependencies.
 
 ```bash
 git clone https://github.com/tianndev/free-proxy.git
@@ -41,10 +43,10 @@ cd free-proxy
 npm start
 ```
 
-Output will be written to the `/proxy` directory.
+Output is written to the `/proxy` directory.
 
 ---
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) &copy; [tianndev](https://github.com/tianndev)
