@@ -1,0 +1,40 @@
+{
+  "name": "free-proxy",
+  "version": "1.0.0",
+  "description": "Continuously updated free proxy list by tianndev. Aggregates HTTP, HTTPS, SOCKS4, and SOCKS5 proxies from multiple providers, refreshed every 10 minutes via GitHub Actions.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianndev/free-proxy.git"
+  },
+  "keywords": [
+    "tianndev",
+    "free-proxy",
+    "free-proxy-list",
+    "proxy-list",
+    "proxy",
+    "proxies",
+    "http-proxy",
+    "https-proxy",
+    "socks4",
+    "socks5",
+    "proxy-scraper",
+    "proxy-aggregator",
+    "automation"
+  ],
+  "author": "tianndev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tianndev/free-proxy/issues"
+  },
+  "homepage": "https://github.com/tianndev/free-proxy#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "private": true
+}
