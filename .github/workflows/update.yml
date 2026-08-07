@@ -2,7 +2,7 @@ name: Update Proxies
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -23,11 +23,9 @@ jobs:
       - name: Run script
         run: npm start
       - name: Commit changes
-        env:
-          GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
-          git config --local user.email "$GIT_EMAIL"
-          git config --local user.name "Tianndev"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
 
           STATS=$(cat stats.json)
           HTTP=$(echo $STATS | node -e "process.stdout.write(String(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).http||0))")
