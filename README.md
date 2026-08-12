@@ -9,7 +9,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-black?style=flat-square&logo=javascript&logoColor=white)](#)
 [![Telegram](https://img.shields.io/badge/Telegram-tianndev-black?style=flat-square&logo=telegram&logoColor=white)](https://t.me/tianndev)
 
-> **Last updated:** <!-- LAST_UPDATED -->12 August 2026 at 16:42:49<!-- /LAST_UPDATED --> WIB
+> **Last updated:** <!-- LAST_UPDATED -->12 August 2026 at 18:03:57<!-- /LAST_UPDATED --> WIB
 
 A continuously updated, protocol-categorized free proxy list maintained by [tianndev](https://github.com/tianndev). Proxies are aggregated from multiple upstream providers, deduplicated, and committed automatically every **30 minutes** via GitHub Actions.
 
