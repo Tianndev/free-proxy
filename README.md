@@ -1,60 +1,73 @@
-# free-proxy
+<div align="center">
 
-[![License](https://img.shields.io/github/license/tianndev/free-proxy?style=flat-square&logo=opensourceinitiative&logoColor=white&color=black)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/tianndev/free-proxy?style=flat-square&logo=github&logoColor=white&color=black)](https://github.com/tianndev/free-proxy/stargazers)
-[![Forks](https://img.shields.io/github/forks/tianndev/free-proxy?style=flat-square&logo=git&logoColor=white&color=black)](https://github.com/tianndev/free-proxy/forks)
-[![Last Commit](https://img.shields.io/github/last-commit/tianndev/free-proxy?style=flat-square&logo=githubactions&logoColor=white&color=black)](https://github.com/tianndev/free-proxy/commits/main)
-[![Auto Updated](https://img.shields.io/badge/auto--updated-every_30_min-black?style=flat-square&logo=clockify&logoColor=white)](https://github.com/tianndev/free-proxy/actions)
-[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D24-black?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-black?style=flat-square&logo=javascript&logoColor=white)](#)
-[![Telegram](https://img.shields.io/badge/Telegram-tianndev-black?style=flat-square&logo=telegram&logoColor=white)](https://t.me/tianndev)
+# Free Proxy List
 
-> **Last updated:** <!-- LAST_UPDATED -->17 August 2026 at 02:47:06<!-- /LAST_UPDATED --> WIB
+[![License](https://img.shields.io/github/license/tianndev/free-proxy?style=for-the-badge&logo=opensourceinitiative&logoColor=white&color=black)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/tianndev/free-proxy?style=for-the-badge&logo=github&logoColor=white&color=black)](https://github.com/tianndev/free-proxy/stargazers)
+[![Forks](https://img.shields.io/github/forks/tianndev/free-proxy?style=for-the-badge&logo=git&logoColor=white&color=black)](https://github.com/tianndev/free-proxy/forks)
+[![Auto Updated](https://img.shields.io/badge/Auto_Updated-Every_30_Mins-black?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/tianndev/free-proxy/actions)
 
-A continuously updated, protocol-categorized free proxy list maintained by [tianndev](https://github.com/tianndev). Proxies are aggregated from multiple upstream providers, deduplicated, and committed automatically every **30 minutes** via GitHub Actions.
+**A continuously updated, deduplicated, and automated high-quality proxy list.**
 
+</div>
 
 ---
 
-## Proxy Lists
+## About The Project
 
-All entries follow `IP:PORT` format, one proxy per line. Suitable for direct use with `curl`, `proxychains`, Python `requests`, and similar tooling.
+This repository serves as a reliable, automated proxy aggregator. It fetches proxies from multiple upstream providers, extracts them intelligently (supporting both plaintext and JSON API endpoints), deduplicates them, and commits the fresh lists directly to this repository every **30 minutes** via GitHub Actions.
 
-| Protocol | File | Raw URL |
-|:---|:---|:---|
-| HTTP | `proxy/http.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/http.txt) |
-| HTTPS | `proxy/https.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/https.txt) |
-| SOCKS4 | `proxy/socks4.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks4.txt) |
-| SOCKS5 | `proxy/socks5.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks5.txt) |
-| All (Mixed) | `proxy/all.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/all.txt) |
+> **Last Updated:** <!-- LAST_UPDATED -->17 August 2026 at 02:51:03<!-- /LAST_UPDATED --> WIB
 
----
-
-## Update Cycle
-
-| Property | Value |
-|:---|:---|
-| Trigger | GitHub Actions cron schedule |
-| Interval | Every 30 minutes |
-| Deduplication | Per-protocol, before commit |
-| Commit format | `Update http.txt: N proxies` |
+### Features
+- **Auto-Updating**: Fully automated workflow updating proxies every 30 minutes.
+- **Categorized**: Neatly separated into HTTP, HTTPS, SOCKS4, and SOCKS5.
+- **Aggregated**: Scrapes from 50+ unique upstream sources simultaneously.
+- **Clean Format**: Standard `IP:PORT` format ready for drop-in use in any tooling (cURL, Proxychains, Python, etc.).
 
 ---
 
-## Local Usage
+## Endpoints
 
-Requires Node.js 24 or higher. No external dependencies.
+You can directly fetch the raw `.txt` files from the links below to integrate into your applications.
 
+| Protocol | Path | Raw Link |
+| :--- | :--- | :--- |
+| **HTTP** | `proxy/http.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/http.txt) |
+| **HTTPS** | `proxy/https.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/https.txt) |
+| **SOCKS4** | `proxy/socks4.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks4.txt) |
+| **SOCKS5** | `proxy/socks5.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/socks5.txt) |
+| **MIXED (All)** | `proxy/all.txt` | [Download](https://raw.githubusercontent.com/tianndev/free-proxy/main/proxy/all.txt) |
+
+---
+
+## Usage (Local Execution)
+
+Want to run the fetcher locally? It is built on modern Javascript, requiring only Node.js with **zero external dependencies**.
+
+### Prerequisites
+- Node.js >= 24
+
+### Installation
 ```bash
 git clone https://github.com/tianndev/free-proxy.git
 cd free-proxy
-npm start
 ```
 
-Output is written to the `/proxy` directory.
+### Execution
+Run the fetcher:
+```bash
+npm start
+```
+*The script will scrape all upstream sources, deduplicate the proxies, and write the output files into the `/proxy` directory.*
 
 ---
 
-## License
+<div align="center">
 
-[MIT](LICENSE) &copy; [tianndev](https://github.com/tianndev)
+Built by [tianndev](https://github.com/tianndev) | License: [MIT](LICENSE)
+<br><br>
+[![Telegram](https://img.shields.io/badge/Telegram-tianndev-black?style=flat-square&logo=telegram&logoColor=white)](https://t.me/tianndev)
+[![Saweria](https://img.shields.io/badge/Saweria-tianndev-black?style=flat-square)](https://saweria.co/tianndev)
+
+</div>
