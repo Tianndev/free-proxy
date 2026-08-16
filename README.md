@@ -2,16 +2,15 @@
 
 # Free Proxy List
 
-[![License](https://img.shields.io/github/license/tianndev/free-proxy?style=for-the-badge&logo=opensourceinitiative&logoColor=white&color=black)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/tianndev/free-proxy?style=for-the-badge&logo=github&logoColor=white&color=black)](https://github.com/tianndev/free-proxy/stargazers)
-[![Forks](https://img.shields.io/github/forks/tianndev/free-proxy?style=for-the-badge&logo=git&logoColor=white&color=black)](https://github.com/tianndev/free-proxy/forks)
-[![Auto Updated](https://img.shields.io/badge/Auto_Updated-Every_30_Mins-black?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/tianndev/free-proxy/actions)
+[![License](https://img.shields.io/github/license/tianndev/free-proxy?style=for-the-badge&logo=opensourceinitiative&logoColor=white&color=blue)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/tianndev/free-proxy?style=for-the-badge&logo=github&logoColor=white&color=gold)](https://github.com/tianndev/free-proxy/stargazers)
+[![Forks](https://img.shields.io/github/forks/tianndev/free-proxy?style=for-the-badge&logo=git&logoColor=white&color=orange)](https://github.com/tianndev/free-proxy/forks)
+[![Auto Updated](https://img.shields.io/badge/Auto_Updated-Every_30_Mins-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/tianndev/free-proxy/actions)
 
-**A continuously updated, deduplicated, and automated high-quality proxy list.**
+*A continuously updated, deduplicated, and automated high-quality proxy aggregator.*
 
+<br />
 </div>
-
----
 
 ## About The Project
 
@@ -19,17 +18,18 @@ This repository serves as a reliable, automated proxy aggregator. It fetches pro
 
 > **Last Updated:** <!-- LAST_UPDATED -->17 August 2026 at 02:51:03<!-- /LAST_UPDATED --> WIB
 
-### Features
+### Core Features
+
 - **Auto-Updating**: Fully automated workflow updating proxies every 30 minutes.
 - **Categorized**: Neatly separated into HTTP, HTTPS, SOCKS4, and SOCKS5.
-- **Aggregated**: Scrapes from 50+ unique upstream sources simultaneously.
+- **Aggregated**: Scrapes from curated unique upstream sources simultaneously.
 - **Clean Format**: Standard `IP:PORT` format ready for drop-in use in any tooling (cURL, Proxychains, Python, etc.).
 
 ---
 
-## Endpoints
+## Available Endpoints
 
-You can directly fetch the raw `.txt` files from the links below to integrate into your applications.
+You can directly fetch the raw `.txt` files from the links below to integrate into your applications seamlessly.
 
 | Protocol | Path | Raw Link |
 | :--- | :--- | :--- |
@@ -41,7 +41,7 @@ You can directly fetch the raw `.txt` files from the links below to integrate in
 
 ---
 
-## Usage (Local Execution)
+## Local Deployment
 
 Want to run the fetcher locally? It is built on modern Javascript, requiring only Node.js with **zero external dependencies**.
 
@@ -65,9 +65,9 @@ npm start
 
 <div align="center">
 
-Built by [tianndev](https://github.com/tianndev) | License: [MIT](LICENSE)
+**Built with dedication by [tianndev](https://github.com/tianndev) | License: [MIT](LICENSE)**
 <br><br>
-[![Telegram](https://img.shields.io/badge/Telegram-tianndev-black?style=flat-square&logo=telegram&logoColor=white)](https://t.me/tianndev)
-[![Saweria](https://img.shields.io/badge/Saweria-tianndev-black?style=flat-square)](https://saweria.co/tianndev)
+[![Telegram](https://img.shields.io/badge/Telegram-tianndev-2CA5E0?style=flat-square&logo=telegram&logoColor=white)](https://t.me/tianndev)
+[![Saweria](https://img.shields.io/badge/Saweria-tianndev-F2B325?style=flat-square)](https://saweria.co/tianndev)
 
 </div>
