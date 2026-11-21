@@ -16,7 +16,7 @@
 
 This repository serves as a reliable, automated proxy aggregator. It fetches proxies from multiple upstream providers, extracts them intelligently (supporting both plaintext and JSON API endpoints), deduplicates them, and commits the fresh lists directly to this repository every **30 minutes** via GitHub Actions.
 
-> **Last Updated:** <!-- LAST_UPDATED -->21 November 2026 at 13:49:19<!-- /LAST_UPDATED --> WIB
+> **Last Updated:** <!-- LAST_UPDATED -->21 November 2026 at 22:13:02<!-- /LAST_UPDATED --> WIB
 
 ### Core Features
 
